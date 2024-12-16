@@ -29,3 +29,5 @@ Este script en Python permite buscar posibles sitios de phishing utilizando la A
    ```bash
    python urlscan.py
     ```
+
+Introduce tu API de Urlscan.io (https://urlscan.io/) y elige tus opciones.
