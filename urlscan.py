@@ -1,6 +1,5 @@
 import requests
 import pyfiglet
-import pandas as pd
 import os
 
 # URL de la API de búsqueda de urlscan.io
@@ -32,6 +31,18 @@ def cargar_api_key():
     else:
         return None
 
+# Función para guardar los resultados en un archivo .txt con codificación utf-8
+def save_to_txt(results_list, filename):
+    with open(filename, "w", encoding="utf-8") as file:
+        # Escribir encabezado
+        file.write("URL\tPage\tResult\tScreenshot\n")
+        
+        # Escribir los resultados
+        for result in results_list:
+            file.write(f"{result['URL']}\t{result['Page']}\t{result['Result']}\t{result['Screenshot']}\n")
+    
+    print(f"El reporte ha sido generado como '{filename}'")
+
 # Función para buscar usando query
 def search_by_query(query, api_key):
     headers = {"API-Key": api_key}
@@ -48,22 +59,14 @@ def search_by_query(query, api_key):
             for result in data["results"]:
                 result_data = {
                     "URL": result["page"].get("url", "N/A"),
-                    "ID": result.get("_id", "N/A"),
-                    "Submitter": result.get("submitter", "N/A"),
-                    "Task": result.get("task", "N/A"),
-                    "Stats": result.get("stats", "N/A"),
                     "Page": result.get("page", "N/A"),
                     "Result": result.get("result", "N/A"),
                     "Screenshot": result.get("screenshot", "N/A"),
                 }
                 results_list.append(result_data)
 
-        # Guardar los resultados en un archivo Excel
-        df = pd.DataFrame(results_list)
-        df.to_excel("report_clave.xlsx", index=False)
-
-        print("El reporte ha sido generado como 'report_clave.xlsx'")
-
+        # Guardar los resultados en un archivo txt
+        save_to_txt(results_list, "report_clave.txt")
     else:
         print(f"Error en la solicitud con query: {response.status_code}")
         print(response.text)
@@ -81,21 +84,14 @@ def search_by_hash(hash_value, api_key):
         for result in data.get('results', []):
             result_data = {
                 "URL": result["page"].get("url", "N/A"),
-                    "ID": result.get("_id", "N/A"),
-                    "Submitter": result.get("submitter", "N/A"),
-                    "Task": result.get("task", "N/A"),
-                    "Stats": result.get("stats", "N/A"),
-                    "Page": result.get("page", "N/A"),
-                    "Result": result.get("result", "N/A"),
-                    "Screenshot": result.get("screenshot", "N/A"),
+                "Page": result.get("page", "N/A"),
+                "Result": result.get("result", "N/A"),
+                "Screenshot": result.get("screenshot", "N/A"),
             }
             result_list.append(result_data)
         
-        # Crear el reporte en Excel
-        df = pd.DataFrame(result_list)
-        df.to_excel("report_hash.xlsx", index=False)
-        print("El reporte ha sido generado como 'report_hash.xlsx'")
-
+        # Guardar los resultados en un archivo txt
+        save_to_txt(result_list, "report_hash.txt")
     else:
         print(f"Error en la solicitud con hash: {response.status_code}")
         print(response.text)
