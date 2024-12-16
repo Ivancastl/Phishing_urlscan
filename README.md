@@ -17,14 +17,13 @@ Este script en Python permite buscar posibles sitios de phishing utilizando la A
 1. **Clonar el repositorio**:
    ```bash
   git clone https://github.com/Ivancastl/Phishing_urlscan.git
-    ```
+  
 2. **Ve al directorio**:
    ```bash
    cd urlscan_API
-    ```
+
 3. **Ejecuta el script**:
    ```bash
    python urlscan.py
-    ```
 
 Introduce tu API de Urlscan.io (https://urlscan.io/) y elige tus opciones.
