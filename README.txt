@@ -1,18 +1,18 @@
-# API-Urlscan.io 🔍🌐
+#API-Urlscan.io 🔍🌐
 
 Este script en Python permite buscar posibles sitios de phishing utilizando la API de urlscan.io. Puedes realizar búsquedas por palabra clave o por el hash de una imagen o archivo para ver qué sitios están utilizando dichos recursos.
 
-## Funcionalidades 🚀:
+##Funcionalidades 🚀:
 - **Buscar por palabra clave** 🔑: Permite buscar sitios relacionados con una palabra clave específica y excluir un dominio legítimo.
 - **Buscar por hash** 🔐: Permite buscar archivos o imágenes por su hash (SHA-256) y ver qué sitios los están utilizando.
 
-## Requerimientos ⚙️:
+##Requerimientos ⚙️:
 - Python 🐍
 - API de urlscan.io desde [https://urlscan.io](https://urlscan.io)
 
-## Instalación 💻:
+##Instalación 💻:
 
-### En Kali Linux 🐧:
+###En Kali Linux 🐧:
 
 1. **Clonar el repositorio**:
 
