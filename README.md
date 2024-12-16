@@ -19,7 +19,7 @@ Este script en Python permite buscar posibles sitios de phishing utilizando la A
    Abre una terminal y ejecuta el siguiente comando para clonar el repositorio en tu máquina:
 
    ```bash
-   git clone https://github.com/tu_usuario/urlscan_API.git
+  git clone https://github.com/Ivancastl/Phishing_urlscan.git
     ```
 2. **Ve al directorio**:
    ```bash
