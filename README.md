@@ -15,8 +15,6 @@ Este script en Python permite buscar posibles sitios de phishing utilizando la A
 ### En Kali Linux 🐧:
 
 1. **Clonar el repositorio**:
-
-   Abre una terminal y ejecuta el siguiente comando para clonar el repositorio en tu máquina:
    ```bash
   git clone https://github.com/Ivancastl/Phishing_urlscan.git
     ```
