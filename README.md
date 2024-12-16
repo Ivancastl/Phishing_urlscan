@@ -21,7 +21,7 @@ Este script en Python permite buscar posibles sitios de phishing utilizando la A
   
 2. **Ve al directorio**:
    ```bash
-   cd urlscan_API
+   cd Phishing_urlscan
 
 3. **Ejecuta el script**:
    ```bash
