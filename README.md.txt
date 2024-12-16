@@ -1,24 +1,65 @@
-# API-Urlscan.io 🔍🌐
+# 🌐 **Proyecto Dominios** 🚀
 
-Este script en Python permite buscar posibles sitios de phishing utilizando la API de urlscan.io. Puedes realizar búsquedas por palabra clave o por el hash de una imagen o archivo para ver qué sitios están utilizando dichos recursos.
+Este proyecto tiene como objetivo **buscar y analizar dominios**, enfocado en la **detección de phishing** y en la identificación de **posibles amenazas de seguridad web**. A través de diferentes métodos de búsqueda, el sistema permite monitorear registros de dominios, identificar patrones sospechosos y obtener información sobre dominios asociados con actividades maliciosas.
 
-## Funcionalidades 🚀:
-- **Buscar por palabra clave** 🔑: Permite buscar sitios relacionados con una palabra clave específica y excluir un dominio legítimo.
-- **Buscar por hash** 🔐: Permite buscar archivos o imágenes por su hash (SHA-256) y ver qué sitios los están utilizando.
+![DominiOSINT](dominiosint.jpeg)
 
-## Requerimientos ⚙️:
-- Python 🐍
-- API de urlscan.io desde [https://urlscan.io](https://urlscan.io)
+### Funcionalidades
 
-## Instalación 💻:
+- **Búsqueda por fecha**: Puedes buscar dominios registrados en una fecha específica. Por ejemplo, si deseas ver todos los dominios registrados el 5 de diciembre de 2024, simplemente ingresa la fecha `20241205`.
+  
+- **Búsqueda por rango de fechas**: Puedes buscar dominios registrados dentro de un rango de fechas. Por ejemplo, si quieres ver los dominios registrados entre el 5 de noviembre de 2024 y el 5 de diciembre de 2024, puedes ingresar el rango `20241105-20241205`.
+  
+- **Búsqueda por palabras clave**: Si deseas encontrar dominios que contengan palabras clave específicas, puedes agregar esas palabras clave. Por ejemplo, si quieres ver dominios relacionados con el banco "BBVA", solo necesitas agregar la palabra `bbva`. Además, puedes buscar múltiples palabras clave separadas por comas, como `bbva,santander,hsbc`, y el script traerá todos los dominios que contengan alguna de esas palabras clave.
 
-### En Kali Linux 🐧:
+- **Dominios con distintos TLDs**: El sistema soporta dominios con diferentes TLDs (por ejemplo, `.com`, `.net`, `.org`, etc.), lo que te permite obtener resultados más completos.
 
-1. **Clonar el repositorio**:
+### Requisitos
 
-   Abre una terminal y ejecuta el siguiente comando para clonar el repositorio en tu máquina:
+Asegúrate de tener instalado `python` y `pip` antes de comenzar.
 
-   ```bash
-   git clone https://github.com/tu_usuario/urlscan_API.git
+Compatibilidad:
+
+- Kali Linux
+- Linux 
+- Windows
+- macOS
+
+
+### Instalación - Kali Linux
+
+Sigue estos pasos para clonar el repositorio y configurar el entorno:
+
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/Ivancastl/dominios.git
+    ```
+
+2. Navega al directorio del proyecto:
+    ```bash
+    cd dominios
+    ```
+
+3. Instala las dependencias del proyecto usando el archivo `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Uso
+
+Una vez que las dependencias estén instaladas, puedes ejecutar el script con el siguiente comando:
+
+```bash
+python dominios.py
+```
+
+
+### Agradecimientos
+
+Este proyecto utiliza dominios provenientes del siguiente repositorio:
+
+- [nitt-sec-nrd](https://github.com/nicotechtips/nitt-sec-nrd/tree/main/lists) - Una lista de dominios públicos, proporcionada por [nicotechtips](https://github.com/nicotechtips).
+
+Gracias a los autores por compartir este recurso valioso.
 
 
