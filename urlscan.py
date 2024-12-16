@@ -35,11 +35,11 @@ def cargar_api_key():
 def save_to_txt(results_list, filename):
     with open(filename, "w", encoding="utf-8") as file:
         # Escribir encabezado
-        file.write("URL\tPage\tResult\tScreenshot\n")
+        file.write("URL\tScreenshot\n")
         
         # Escribir los resultados
         for result in results_list:
-            file.write(f"{result['URL']}\t{result['Page']}\t{result['Result']}\t{result['Screenshot']}\n")
+            file.write(f"{result['URL']}\t{result['Screenshot']}\n")
     
     print(f"El reporte ha sido generado como '{filename}'")
 
@@ -59,8 +59,6 @@ def search_by_query(query, api_key):
             for result in data["results"]:
                 result_data = {
                     "URL": result["page"].get("url", "N/A"),
-                    "Page": result.get("page", "N/A"),
-                    "Result": result.get("result", "N/A"),
                     "Screenshot": result.get("screenshot", "N/A"),
                 }
                 results_list.append(result_data)
@@ -84,8 +82,6 @@ def search_by_hash(hash_value, api_key):
         for result in data.get('results', []):
             result_data = {
                 "URL": result["page"].get("url", "N/A"),
-                "Page": result.get("page", "N/A"),
-                "Result": result.get("result", "N/A"),
                 "Screenshot": result.get("screenshot", "N/A"),
             }
             result_list.append(result_data)
