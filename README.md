@@ -12,8 +12,6 @@ Este script en Python permite buscar posibles sitios de phishing utilizando la A
 
 ## Instalación 💻:
 
-### En Kali Linux 🐧:
-
 1. **Clonar el repositorio**:
    ```bash
    git clone https://github.com/Ivancastl/Phishing_urlscan.git
